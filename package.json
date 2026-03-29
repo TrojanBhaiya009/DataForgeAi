@@ -1,0 +1,31 @@
+{
+  "name": "aip05",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "start": "npm --prefix frontend run start",
+    "api:dev": "tsx watch backend/src/server.ts",
+    "dev:all": "concurrently \"npm:dev\" \"npm:api:dev\"",
+    "build": "npm --prefix frontend run build",
+    "api:build": "tsc -p backend/tsconfig.json",
+    "build:all": "concurrently \"npm:build\" \"npm:api:build\"",
+    "api:start": "node backend/dist/server.js",
+    "lint": "npm --prefix frontend run lint"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.12.0",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.57.0"
+  }
+}
